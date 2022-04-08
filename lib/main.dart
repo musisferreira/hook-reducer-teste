@@ -92,21 +92,25 @@ class HomePage extends HookWidget {
           children: [
             Row(
               children: [
-                TextButton(
-                  onPressed: () => store.dispatch(Action.rotateLeft),
-                  child: const Text('Rotate Left'),
-                ),
-                TextButton(
-                  onPressed: () => store.dispatch(Action.rotateRight),
-                  child: const Text('Rotate Right'),
-                ),
-                TextButton(
-                  onPressed: () => store.dispatch(Action.lessVisible),
-                  child: const Text('- Alpha'),
-                ),
-                TextButton(
-                  onPressed: () => store.dispatch(Action.moreVisible),
-                  child: const Text('+ Alpha'),
+                ButtonBar(
+                  children: [
+                    TextButton(
+                      onPressed: () => store.dispatch(Action.rotateLeft),
+                      child: const Text('Rotate Left'),
+                    ),
+                    TextButton(
+                      onPressed: () => store.dispatch(Action.rotateRight),
+                      child: const Text('Rotate Right'),
+                    ),
+                    TextButton(
+                      onPressed: () => store.dispatch(Action.lessVisible),
+                      child: const Text('- Alpha'),
+                    ),
+                    TextButton(
+                      onPressed: () => store.dispatch(Action.moreVisible),
+                      child: const Text('+ Alpha'),
+                    ),
+                  ],
                 ),
               ],
             ),
