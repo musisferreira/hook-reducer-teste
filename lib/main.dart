@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: FlexThemeData.dark(scheme: FlexScheme.materialHc),
       home: const HomePage(),
@@ -90,27 +91,24 @@ class HomePage extends HookWidget {
         ),
         body: Column(
           children: [
-            Row(
+            ButtonBar(
+              alignment: MainAxisAlignment.center,
               children: [
-                ButtonBar(
-                  children: [
-                    TextButton(
-                      onPressed: () => store.dispatch(Action.rotateLeft),
-                      child: const Text('Rotate Left'),
-                    ),
-                    TextButton(
-                      onPressed: () => store.dispatch(Action.rotateRight),
-                      child: const Text('Rotate Right'),
-                    ),
-                    TextButton(
-                      onPressed: () => store.dispatch(Action.lessVisible),
-                      child: const Text('- Alpha'),
-                    ),
-                    TextButton(
-                      onPressed: () => store.dispatch(Action.moreVisible),
-                      child: const Text('+ Alpha'),
-                    ),
-                  ],
+                TextButton(
+                  onPressed: () => store.dispatch(Action.rotateLeft),
+                  child: const Text('Rotate Left'),
+                ),
+                TextButton(
+                  onPressed: () => store.dispatch(Action.rotateRight),
+                  child: const Text('Rotate Right'),
+                ),
+                TextButton(
+                  onPressed: () => store.dispatch(Action.lessVisible),
+                  child: const Text('- Alpha'),
+                ),
+                TextButton(
+                  onPressed: () => store.dispatch(Action.moreVisible),
+                  child: const Text('+ Alpha'),
                 ),
               ],
             ),
